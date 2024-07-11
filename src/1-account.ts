@@ -1,10 +1,9 @@
-import { createPublicClient, formatEther, http } from 'viem';
+import { createPublicClient, formatEther, Hex, http } from 'viem';
 import { generatePrivateKey, privateKeyToAccount } from 'viem/accounts';
 import { sepolia } from 'viem/chains';
+import 'dotenv/config';
 
-const privateKey = "0x0c35b08538e994e6ee33cb93717a79d0ef19dea4108dd60dae7a530adb3d9aa0";
-// console.log(privateKey, 'PRIVATE_KEY');
-
+const privateKey = process.env.PRIVATE_KEY as Hex;
 const account = privateKeyToAccount(privateKey);
 // address = "0x2bc6C3956464250b45768BBd7F825dd622FE4c42"
 // 0x2bc6C3956464250b45768BBd7F825dd622FE4c42
